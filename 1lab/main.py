@@ -394,8 +394,8 @@ def main():
     
     print("\n" + "-" * 60)
     print("КОМАНДЫ:")
-    print("  e2e4      - сделать ход (например, e2e4)")
-    print("  select e2 - подсветить возможные ходы фигуры")
+    print("  a2a3      - сделать ход (например, a2a3)")
+    print("  select a2 - подсветить возможные ходы фигуры")
     print("  undo      - откатить последний ход")
     print("  quit      - выйти из игры")
     print("=" * 60)
@@ -423,7 +423,7 @@ def main():
 
         cmd = input(
             f"\n{board.turn}'s turn. "
-            "Enter move (e2e4), 'select e2', 'undo', or 'quit': "
+            "Enter move (a2a3), 'select a2', 'undo', or 'quit': "
         ).strip().lower()
 
         if cmd == 'quit':
@@ -446,7 +446,7 @@ def main():
                 else:
                     print("Неверная позиция")
             except (ValueError, IndexError):
-                print("Неверная команда. Пример: select e2")
+                print("Неверная команда. Пример: select a2")
             continue
         elif len(cmd) == 4:
             try:
@@ -457,10 +457,13 @@ def main():
                 else:
                     print("Неверный ход")
             except (ValueError, IndexError):
-                print("Неверная команда. Пример: e2e4")
+                print("Неверная команда. Пример: a2a3")
         else:
-            print("Команды: e2e4, select e2, undo, quit")
+            print("Команды: a2a3, select a2, undo, quit")
 
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()
